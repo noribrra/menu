@@ -1,0 +1,116 @@
+ /* Dark Background with a Stylish Gradient */
+ body {
+    background: linear-gradient(135deg, #333,#222);
+    color: white;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Category Navbar Styling */
+.category-nav {
+    position: sticky;
+    top: 0; /* Sticks the nav to the top */
+    z-index: 1000; /* Ensures the nav stays on top of other elements */
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+    gap: 10px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    backdrop-filter: blur(10px);
+    background-color: transparent;
+}
+
+.category-nav::-webkit-scrollbar {
+    display: none;
+}
+
+.category-btn {
+    flex: 0 0 auto;
+    padding: 10px 15px;
+    border-radius: 25px;
+    font-weight: bold;
+    transition: all 0.3s ease-in-out;
+    background: linear-gradient(45deg, #ff8c00, #ff4500);
+    border: none;
+    color: white;
+    box-shadow: 2px 2px 5px rgba(255, 140, 0, 0.4);
+}
+
+.category-btn:hover {
+    background: linear-gradient(45deg, #ff4500, #ff8c00);
+    transform: scale(1.05);
+}
+
+/* Active Button Styling */
+.category-btn.active {
+    background: linear-gradient(45deg, #ff4500, #ff8c00);
+    transform: scale(1.05);
+    box-shadow: 4px 6px 15px rgba(255, 140, 0, 0.6);
+}
+
+/* Card Styling (Like Buttons) */
+.card {
+    border: none;
+    border-radius: 15px;
+    background: linear-gradient(45deg, #714f25, #542c1d);
+    box-shadow: 2px 4px 10px rgba(255, 140, 0, 0.3);
+    transition: transform 0.3s ease-in-out, box-shadow 0.3s;
+    text-align: center;
+    color: white;
+}
+
+.card:hover {
+    transform: scale(1.03);
+    box-shadow: 4px 6px 15px rgba(255, 140, 0, 0.5);
+}
+
+.card img {
+    
+    border-radius: 15px 15px 0 0;
+    width: 100%; /* Ensures the image scales to the full width of the card */
+    height: 200px; /* Set a fixed height for the image */
+    object-fit: cover; /* Ensures the image covers the entire area without distortion */
+    opacity: 0.9;
+}
+
+.card-body {
+    padding: 15px;
+}
+
+.card-title {
+    font-size: 18px;
+    font-weight: bold;
+}
+
+/* Section Styling */
+.section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+
+.beautiful-heading {
+    font-size: 3rem; /* Big font size */
+    font-weight: 700; /* Bold */
+    text-transform: uppercase; /* Uppercase for emphasis */
+    color: #ff8c00; /* Orange color for a pop */
+    background: linear-gradient(45deg, #ff8c00, #ff4500); /* Gradient background */
+    -webkit-background-clip: text; /* Clip the background to the text */
+    color: transparent; /* Make text transparent to show the gradient */
+   
+    margin-bottom: 30px; /* Bottom margin for spacing */
+    letter-spacing: 2px; /* Spacing between letters */
+    text-align: center; /* Center-align the text */
+    padding: 10px 0; /* Padding on top and bottom */
+   
+}
+
+
+
+
+
