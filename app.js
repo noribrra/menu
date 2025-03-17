@@ -4,34 +4,26 @@ const navItems = [
     { id: "burgers", name: "Burgers" },
     { id: "pizza", name: "Pizza" },
     { id: "drinks", name: "Drinks" },
-   
 ];
 
 const items = {
     shawarma: [
-        { name: "Classic Shawarma", price: "2k", image: "./pngs/shawrma.png" },
-        { name: "Spicy Shawarma", price: "2.5k", image: "./pngs/shawrma2.png" },
-        { name: "Spicy Shawarma", price: "2.5k", image: "./pngs/shawrma3.png" },
-        { name: "Spicy Shawarma", price: "2.5k", image: "./pngs/shawrma4.png" },
-        { name: "Spicy Shawarma", price: "2.5k", image: "./pngs/shawrma5.png" },
-        { name: "Spicy Shawarma", price: "2.5k", image: "./pngs/shawrma6.png" },
+        { name: "Classic Shawarma", price: "2k", image: "./pngs/shawrma.png", description: "A delicious classic shawarma with spices." },
+        { name: "Spicy Shawarma", price: "2.5k", image: "./pngs/shawrma2.png", description: "A spicy shawarma for spice lovers." },
+        { name: "Chicken Shawarma", price: "2.8k", image: "./pngs/shawrma3.png", description: "Tender chicken shawarma with a smoky taste." },
     ],
     burgers: [
-        { name: "Cheese Burger", price: "3k", image: "./pngs/burger.png" },
-        { name: "Beef Burger", price: "3.5k", image: "./pngs/burger2.png" },
-        { name: "Beef Burger", price: "3.5k", image: "./pngs/burger3.png" },
-        { name: "Beef Burger", price: "3.5k", image: "./pngs/burger4.png" },
-        
+        { name: "Cheese Burger", price: "3k", image: "./pngs/burger.png", description: "A tasty cheese burger with fresh ingredients." },
+        { name: "Beef Burger", price: "3.5k", image: "./pngs/burger2.png", description: "Juicy beef patty with your choice of toppings." },
     ],
     pizza: [
-        { name: "Margherita Pizza", price: "5k", image: "./pngs/pizza.png" },
-        { name: "Pepperoni Pizza", price: "5.5k", image: "./pngs/pizza2.png" },
+        { name: "Margherita Pizza", price: "5k", image: "./pngs/pizza.png", description: "Classic Margherita pizza with mozzarella and basil." },
+        { name: "Pepperoni Pizza", price: "5.5k", image: "./pngs/pizza2.png", description: "Pepperoni pizza with a spicy kick." },
     ],
     drinks: [
-        { name: "Margherita drinks", price: "5k", image: "./pngs/drink.png" },
-        { name: "Pepperoni drinks", price: "5.5k", image: "./pngs/drink2.png" },
+        { name: "Orange Juice", price: "2k", image: "./pngs/drink.png", description: "Freshly squeezed orange juice." },
+        { name: "Lemonade", price: "2.5k", image: "./pngs/drink2.png", description: "A refreshing glass of lemonade." },
     ],
-    // Add more items for other categories
 };
 
 // Function to create navigation buttons
@@ -100,6 +92,9 @@ function loadItems(category) {
         cardPrice.textContent = item.price;
         cardBody.appendChild(cardPrice);
 
+        // Add click event to show item details
+        card.addEventListener("click", () => showItemDetails(item));
+
         card.appendChild(cardBody);
         col.appendChild(card);
         row.appendChild(col);
@@ -108,6 +103,22 @@ function loadItems(category) {
     container.appendChild(row);
     section.appendChild(container);
     sectionsContainer.appendChild(section);
+}
+
+// Function to show item details
+function showItemDetails(item) {
+    // Show the item details modal
+    document.getElementById("item-title").textContent = item.name;
+    document.getElementById("item-image").src = item.image;
+    document.getElementById("item-description").textContent = item.description;
+    document.getElementById("item-price").textContent = item.price;
+    
+    document.getElementById("item-details").style.display = "block";
+}
+
+// Function to hide item details
+function hideItemDetails() {
+    document.getElementById("item-details").style.display = "none";
 }
 
 // Initial call to generate the page content dynamically

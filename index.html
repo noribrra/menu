@@ -45,6 +45,20 @@
         <!-- Content will be inserted here dynamically by JavaScript -->
     </div>
 
+    <div id="item-details" class="item-details-section" style="display: none;">
+        <div class="container">
+            <div class="row">
+                <div class="col-12 col-md-8 mx-auto text-center">
+                    <h2 id="item-title" class="beautiful-heading"></h2>
+                    <img id="item-image" src="" alt="Item Image" class="img-fluid">
+                    <p id="item-description"></p>
+                    <h4 id="item-price"></h4>
+                    <button onclick="hideItemDetails()" class="btn btn-danger">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script src="app.js"></script>
 
 </body>
