@@ -93,6 +93,17 @@
     text-align: center;
 }
 
+.logo-container {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.logo-img {
+    max-width: 200px; /* Adjust logo size */
+    height: auto;
+}
+
+
 
 .beautiful-heading {
     font-size: 3rem; /* Big font size */
